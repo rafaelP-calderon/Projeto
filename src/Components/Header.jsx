@@ -4,7 +4,7 @@ function Header() {
     return (
         <header>
             <div className={styles.logo}>
-                <img className={styles.imgLogo} src="https://placehold.co/220x120" alt="Logo do Website" />
+                <img className={styles.imgLogo} src="src\assets\restfinderLogo.jpg" alt="Logo do Website" />
             </div>
                 <nav>
                     <ul>

@@ -7,10 +7,15 @@ header {
     height: 150px;
 }
 
+header .logo .imgLogo {
+    width: 280px;
+    height: 180px;
+}
+
 header .logo .imgLogo,
 header nav {
     margin: 0 5vw 0 5vw;
-    padding: 1vw;
+    padding: 1.2vw;
 }
 
 header nav ul {
