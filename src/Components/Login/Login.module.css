@@ -18,35 +18,7 @@ form .infos {
     display: flex;
     flex-direction: column;
     gap: 1vw;
-    width: 40%;
-}
-
-form .infos .nomeSobrenome {
-    display: flex;
-    width: 100%;
-    gap: 1vw;
-}
-
-form .infos .nomeSobrenome .nome {
-    width: 60%;
-}
-
-form .infos .nomeSobrenome .sobrenome {
-    width: 100%;
-}
-
-form .infos .cpfNasc {
-    display: flex;
-    width: 100%;
-    gap: 1vw;
-}
-
-form .infos .cpfNasc .cpf {
-    width: 100%;
-}
-
-form .infos .cpfNasc .dtNasc {
-    width: 60%;
+    width: 25%;
 }
 
 form .infos .senha {
@@ -87,7 +59,7 @@ form .voltar {
     align-items: center;
     cursor: pointer;
     font-size: 1.2rem;
-    width: 40%;
+    width: 25%;
 }
 
 form .btnVoltar {

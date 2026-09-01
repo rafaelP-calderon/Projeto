@@ -1,0 +1,75 @@
+.card {
+    display: flex;
+    flex-direction: column;
+    border: 1px solid #000;
+    width: 300px;
+    margin: 2rem;
+    border-radius: 1rem;
+}
+
+.card .metadeCimaCard {
+    width: 100%;
+    padding: 1rem;
+}
+
+.card .metadeCimaCard .imgRestaurante {
+    width: 100%;
+}
+
+.card .metadeCimaCard .imgRestaurante img {
+    display: block;
+    width: 100%;
+    border-radius: 1rem;
+}
+
+.card .metadeBaixoCard {
+    display: flex;
+    flex-direction: column;
+    gap: 0.7rem;
+    margin-left: 1rem;
+}
+
+.card .metadeBaixoCard .nome h5 {
+    font-size: 1.9rem;
+}
+
+.card .metadeBaixoCard .localizacao {
+    display: flex;
+    gap: 0.4rem;
+    align-items: center;
+    justify-content: space-between;
+    margin-right: 1rem;
+}
+
+.card .metadeBaixoCard .localizacao .local {
+    display: flex;
+    font-size: 1.2rem;
+    gap: 1rem;
+    align-items: center;
+}
+
+.card .metadeBaixoCard .nota {
+    font-size: 1.7rem;
+    color: #88c288;
+}
+
+.card .remover {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    margin-top: 1.5rem;
+}
+
+.card .remover button{
+    background: none;
+    border: 0;
+    padding: 0.5rem;
+    width: 90%;
+    background-color: red;
+    border-radius: 1rem;
+    color: #fff;
+    font-size: 1rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    cursor: pointer;
+}
