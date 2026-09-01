@@ -14,6 +14,7 @@ form {
     justify-content: center;
     gap: 1vw;
     align-items: center;
+    position: relative;
 }
 
 form label {
@@ -39,6 +40,32 @@ form .infos .nomeSobrenome .nome {
 
 form .infos .nomeSobrenome .sobrenome {
     width: 100%;
+}
+
+form .infos .cpfNasc {
+    display: flex;
+    width: 100%;
+    gap: 1vw;
+}
+
+form .infos .cpfNasc .cpf {
+    width: 100%;
+}
+
+form .infos .cpfNasc .dtNasc {
+    width: 60%;
+}
+
+form .infos .senha {
+    position: relative;
+}
+
+form .infos .senha .olho {
+    position: absolute;
+    right: 1rem;
+    top: 65%;
+    transform: translateY(-50%);
+    cursor: pointer;
 }
 
 form .infos input {
@@ -80,4 +107,25 @@ form .btnVoltar {
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
     border-radius: 0.5vw;
     cursor: pointer;
+}
+
+.card {
+    background-color: rgb(114, 177, 114);
+    position: absolute;
+    width: 30%;
+    padding: 1rem;
+    right: 0;
+    top: 4rem;
+    margin: 0.4rem;
+    border-radius: 0.5rem;
+    color: #fff;
+    font-weight: bold;
+    opacity: 0;
+    transform: translateY(-10px);
+    transition: opacity 0.4s ease, transform 0.4s ease;
+}
+
+.mostrar {
+    opacity: 1;
+    transform: translateY(0);
 }

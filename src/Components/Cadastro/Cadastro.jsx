@@ -1,3 +1,4 @@
+import { useEffect, useState } from "react";
 import styles from "./Cadastro.module.css";
 
 function Cadastro({ setTela }) {
@@ -33,8 +34,11 @@ function Cadastro({ setTela }) {
       "z",
     ];
 
+    const simbolos = ["!", "@", "#", "$", "%", "&", "*"];
+
     let contNome = 0;
     let contSobrenome = 0;
+    let contSenha = 0;
 
     const form = event.target;
     const nome = form.nome.value.toLowerCase();
@@ -42,6 +46,19 @@ function Cadastro({ setTela }) {
     const email = form.email.value;
     const cpf = form.cpf.value;
     const dtNasc = form.dtNasc.value;
+    const senha = form.senha.value;
+
+    if (
+      nome === "" ||
+      sobrenome === "" ||
+      email === "" ||
+      cpf === "" ||
+      dtNasc === "" ||
+      senha === ""
+    ) {
+      alert("Preencha os campos corretamente!");
+      return;
+    }
 
     const nascimento = new Date(dtNasc);
     const hoje = new Date();
@@ -54,14 +71,21 @@ function Cadastro({ setTela }) {
     }
 
     for (let i = 0; i < sobrenome.length; i++) {
-      let caractersobrenome = sobrenome[i];
-      if (!letras.includes(caractersobrenome)) {
+      let caracterSobrenome = sobrenome[i];
+      if (!letras.includes(caracterSobrenome)) {
         contSobrenome++;
       }
     }
 
-    if ((contNome > 0 || contSobrenome > 0) || (nome.length < 3 || sobrenome.length < 2)) {
-      alert("Utilize apenas letras para preencher o nome e sobrenome e o tamanho mínimo!");
+    if (
+      contNome > 0 ||
+      contSobrenome > 0 ||
+      nome.length < 3 ||
+      sobrenome.length < 2
+    ) {
+      alert(
+        "Utilize apenas letras para preencher o nome e sobrenome e o tamanho mínimo!",
+      );
       return;
     }
 
@@ -90,18 +114,38 @@ function Cadastro({ setTela }) {
       return;
     }
 
-    if (
-      nome === "" ||
-      sobrenome === "" ||
-      email === "" ||
-      cpf === "" ||
-      dtNasc === ""
-    ) {
-      alert("Preencha os campos corretamente!");
-    } else {
-      alert("Cadastro realizado com sucesso!");
+    if (senha.length < 6) {
+      alert("A senha deve ter 6 ou mais caractéres!");
+      return;
     }
+
+    for (let j = 0; j < senha.length; j++) {
+      if (simbolos.includes(senha[j])) {
+        contSenha++;
+      }
+    }
+
+    if (contSenha === 0) {
+      alert("A senha deve conter caractéres especiais!");
+      return;
+    }
+
+    setCadastroRealizado(true);
   }
+  const [senhaVisivel, setSenhaVisivel] = useState(false);
+  const [cadastroRealizado, setCadastroRealizado] = useState(false);
+
+  useEffect(() => {
+    if (cadastroRealizado) {
+      const timer = setTimeout(() => {
+        setCadastroRealizado(false);
+      }, 3000);
+
+      return () => {
+        clearTimeout(timer);
+      };
+    }
+  }, [cadastroRealizado]);
   return (
     <form onSubmit={handleSubmit}>
       <div className={styles.voltar}>
@@ -126,21 +170,40 @@ function Cadastro({ setTela }) {
         </div>
         <div className={styles.email}>
           <label htmlFor="email">Email</label>
-          <input className={styles.email} name="email" type="email" />
+          <input className={styles.inputEmail} name="email" type="email" />
         </div>
-        <div className={styles.cpf}>
-          <label htmlFor="cpf">CPF</label>
-          <input className={styles.cpf} name="cpf" type="text" />
+        <div className={styles.cpfNasc}>
+          <div className={styles.cpf}>
+            <label htmlFor="cpf">CPF</label>
+            <input className={styles.inputCpf} name="cpf" type="text" />
+          </div>
+          <div className={styles.dtNasc}>
+            <label htmlFor="dtNascimento">Data de Nascimento</label>
+            <input className={styles.inputDtNasc} name="dtNasc" type="date" />
+          </div>
         </div>
-        <div className={styles.dtNasc}>
-          <label htmlFor="dtNascimento">Data de Nascimento</label>
-          <input className={styles.dtNasc} name="dtNasc" type="date" />
+        <div className={styles.senha}>
+          <label htmlFor="senha">Senha</label>
+          <input
+            className={styles.inputSenha}
+            name="senha"
+            type={senhaVisivel ? "text" : "password"}
+          />
+          <i
+            onClick={() => setSenhaVisivel(!senhaVisivel)}
+            className={`far ${senhaVisivel ? "fa-eye" : "fa-eye-slash"} ${styles.olho}`}
+          ></i>
         </div>
       </div>
       <div className={styles.enviarInfos}>
         <div className={styles.btnEnviar}>
           <button type="submit">Cadastrar</button>
         </div>
+      </div>
+      <div
+        className={`${styles.card} ${cadastroRealizado ? styles.mostrar : ""}`}
+      >
+        <p>Cadastro realizado com sucesso!</p>
       </div>
     </form>
   );
