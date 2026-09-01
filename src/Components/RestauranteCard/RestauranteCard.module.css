@@ -67,3 +67,21 @@
     width: 100%;
     text-align: justify;
 }
+
+.carrosselRestaurantes .infos .adicionarLista button {
+    background: none;
+    border: 0;
+    padding: 1rem;
+    background-color: #8bb44e;
+    border-radius: 0.8rem;
+    color: #fff;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.carrosselRestaurantes .infos .adicionarLista button:hover {
+    transform: translateY(-10%);
+    transition: 0.3s ease-in-out;
+    box-shadow: 5px 5px 20px #9b9a9a;
+}

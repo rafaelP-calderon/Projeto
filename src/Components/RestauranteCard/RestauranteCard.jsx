@@ -30,6 +30,9 @@ function RestauranteCard() {
             Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quaerat, neque. Vel voluptatem optio quaerat itaque! Vel, dicta optio dignissimos mollitia illo sunt alias! Eveniet enim fugit laudantium suscipit incidunt culpa!
           </p>
         </div>
+        <div className={styles.adicionarLista}>
+          <button className={styles.btnLista}>Lista de Desejos +</button>
+        </div>
       </div>
     </div>
   );

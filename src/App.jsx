@@ -2,6 +2,7 @@ import { useState } from "react"
 import Header from "./Components/Header/Header.jsx"
 import Main from "./Components/Main/Main.jsx"
 import Cadastro from "./Components/Cadastro/Cadastro.jsx"
+import Login from "./Components/Login/Login.jsx"
 import RestauranteCard from "./Components/RestauranteCard/RestauranteCard.jsx"
 import Footer from "./Components/Footer/Footer.jsx"
 import "./reset.css"
@@ -14,8 +15,9 @@ function App() {
   return (
     <div className="app">
       <Header setTela={setTela}/>
-      {tela === "inicio" && (<><Main /> <RestauranteCard /> </>)}
-      {tela === "cadastro" && <Cadastro />}
+      {tela === "inicio" && (<><Main /> <RestauranteCard /></>)}
+      {tela === "cadastro" && <Cadastro setTela={setTela} />}
+      {tela === "login" && <Login setTela={setTela}/>}
       <Footer />
     </div>
   )

@@ -165,7 +165,7 @@ function Cadastro({ setTela }) {
           </div>
           <div className={styles.sobrenome}>
             <label htmlFor="sobrenome">Sobrenome</label>
-            <input className={styles.sobrenome} name="sobrenome" type="text" />
+            <input className={styles.inputSobrenome} name="sobrenome" type="text" />
           </div>
         </div>
         <div className={styles.email}>

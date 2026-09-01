@@ -9,7 +9,7 @@ function Header({setTela}) {
                 <nav>
                     <ul>
                         <li><a href="">Início</a></li>
-                        <li><a href="">Favoritos</a></li>   
+                        <li><a href="">Minha Lista</a></li>   
                         <li className={styles.cadastroBtn}><button className={styles.btnCor} onClick={() => setTela("cadastro")}>Cadastro</button></li>
                         <li className={styles.loginBtn}><button className={styles.btnCor} onClick={() => setTela("login")}>Login</button></li>
                     </ul>
