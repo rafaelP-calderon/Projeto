@@ -25,19 +25,34 @@ header nav ul {
 }
 
 header nav ul li {
-    font-size: 1.2vw;
+    font-size: 1.5rem;
+    font-weight: 600;
+}
+
+header nav ul li button {
+    display: block;
+    padding: 10px 15px;
+    background: transparent;
+    border: 0;
+    font-size: 1.5rem;
     font-weight: 600;
 }
 
 header nav ul li a {
     display: block;
     padding: 10px 15px;
+    transition: 0.3s ease-in-out;
 }
 
 header nav ul li a:hover {
-    color: rgb(211, 181, 10);
-    transition: 0.3s ease-in-out;
     transform: translateY(-5px);
+    cursor: pointer;
+}
+
+
+header nav ul li button:hover {
+    transform: translateY(-5px);
+    cursor: pointer;
 }
 
 header nav ul .loginBtn,
@@ -52,11 +67,11 @@ header nav ul .cadastroBtn:hover {
     transition: 0.3s ease-in-out;
 }
 
-header nav ul .loginBtn a:hover,
-header nav ul .cadastroBtn a:hover {
+header nav ul .loginBtn button:hover,
+header nav ul .cadastroBtn button:hover {
     transform: translateY(0);
 }
 
 header nav ul li .btnCor:hover {
-    color: #1d1d1d;
+    color: #464343;
 }

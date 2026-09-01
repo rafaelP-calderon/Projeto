@@ -1,6 +1,6 @@
 import styles from "./Header.module.css"
 
-function Header() {
+function Header({setTela}) {
     return (
         <header>
             <div className={styles.logo}>
@@ -9,10 +9,9 @@ function Header() {
                 <nav>
                     <ul>
                         <li><a href="">Início</a></li>
-                        <li><a href="">Localizar Restaurante</a></li>
-                        <li><a href="">Sobre</a></li>
-                        <li className={styles.cadastroBtn}><a className={styles.btnCor} href="">Cadastro</a></li>
-                        <li className={styles.loginBtn}><a className={styles.btnCor} href="">Login</a></li>
+                        <li><a href="">Favoritos</a></li>   
+                        <li className={styles.cadastroBtn}><button className={styles.btnCor} onClick={() => setTela("cadastro")}>Cadastro</button></li>
+                        <li className={styles.loginBtn}><button className={styles.btnCor} onClick={() => setTela("login")}>Login</button></li>
                     </ul>
                 </nav>
         </header>
