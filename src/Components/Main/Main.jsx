@@ -1,4 +1,5 @@
 import styles from "./Main.module.css"
+import ListaRestaurantes from "../ListaRestaurantes/ListaRestaurantes"
 
 function Main() {
     return (
@@ -9,6 +10,7 @@ function Main() {
                 </h1>
                 <p className={styles.desc}>Aqui você encontra restaurantes incríveis espalhados pelo Brasil, conhece suas histórias e salva seus favoritos.</p>
             </div>
+            <ListaRestaurantes />
         </main>
     )
 }
