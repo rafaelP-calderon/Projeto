@@ -57,7 +57,6 @@ function Cadastro({ setTela }) {
       senha === ""
     ) {
       alert("Preencha os campos corretamente!");
-      return;
     }
 
     const nascimento = new Date(dtNasc);
